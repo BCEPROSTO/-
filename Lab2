@@ -1,0 +1,21 @@
+public class StarTree {
+    public static void main(String[] args) {
+        int levels = 5; // Change this value to specify the number of levels in the tree
+        displayStarTree(levels);
+    }
+
+    public static void displayStarTree(int levels) {
+        for (int i = 1; i <= levels; i++) {
+            // Print spaces for alignment
+            for (int j = levels - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            // Print '*' symbols for the tree
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            // Move to the next line
+            System.out.println();
+        }
+    }
+}
