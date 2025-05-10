@@ -1,0 +1,30 @@
+public class TicTacToeGame {
+    public static void main(String[] args) {
+        PlayingField field = new PlayingField();
+        Player player1 = new Player("Alice", 'X');
+        Player player2 = new Player("Bob", 'O');
+
+        Player currentPlayer = player1;
+        boolean gameWon = false;
+        int moves = 0;
+
+        while (!gameWon && moves < 9) {
+            field.displayField();
+            int[] move = currentPlayer.makeMove();
+            if (field.changeFieldState(move[0], move[1], currentPlayer.getSymbol())) {
+                moves++;
+                if (field.checkVictory(currentPlayer.getSymbol())) {
+                    gameWon = true;
+                    field.displayField();
+                    System.out.println("Congratulations " + currentPlayer.getName() + "! You win!");
+                } else {
+                    currentPlayer = (currentPlayer == player1) ? player2 : player1;
+                }
+            }
+        }
+
+        if (!gameWon) {
+            System.out.println("It's a draw!");
+        }
+    }
+}
