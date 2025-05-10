@@ -1,0 +1,13 @@
++-------------------+      +----------------+
+|   PlayingField    |      |    Player      |
++-------------------+      +----------------+
+| - board: char[][] |      | - name: String |
+| - SIZE: int       |      | - symbol: char |
++-------------------+      +----------------+
+| + PlayingField()  |      | + Player(name: String, symbol: char) |
+| + displayField()  |      | + getName(): String                  |
+| + changeFieldState(row: int, col: int, symbol: char): boolean   |
+| + checkVictory(symbol: char): boolean                           |
++-------------------+      | + makeMove(): int[]                  |
+                           | + displayPlayerInfo(): void          |
+                           +----------------+
